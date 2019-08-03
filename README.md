@@ -2,6 +2,9 @@
 
 Paging as dots for react-native.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tsepeti/react-native-dots-pagination/master/example.gif" />
+</p>
 
 ## Quickstart
     yarn add react-native-dots-pagination
