@@ -3,7 +3,7 @@
 Paging as dots for react-native.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tsepeti/react-native-dots-pagination/master/example.gif" />
+  <img src="https://raw.githubusercontent.com/tsepeti/react-native-dots-pagination/master/example.gif" width="50%" />
 </p>
 
 ## Quickstart
