@@ -16,5 +16,14 @@
     "ghooks": {
       "pre-commit": "yarn lint"
     }
-  }
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2"
+  },
+  "keywords": [
+    "React",
+    "React-native",
+    "Dots",
+    "Pagination"
+  ]
 }
