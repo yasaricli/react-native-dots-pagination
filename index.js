@@ -22,7 +22,12 @@ export default class Dots extends Component {
 			passiveDotWidth: PropTypes.number,
 			activeDotWidth: PropTypes.number,
 			passiveColor: PropTypes.string,
-			activeColor: PropTypes.string
+			activeColor: PropTypes.string,
+
+			// active Border
+			activeBorder: PropTypes.bool,
+			activeBorderColor: PropTypes.string,
+			activeBorderWidth: PropTypes.number
 		};
 	}
 
@@ -36,7 +41,12 @@ export default class Dots extends Component {
 		passiveDotWidth: 10,
 		activeDotWidth: 15,
 		passiveColor: '#CCCCCC',
-		activeColor: '#016bd8'
+		activeColor: '#016bd8',
+
+		// Borders
+		activeBorder: false,
+		activeBorderWidth: 3,
+		activeBorderColor: '#FFF'
 	};
 
 	componentWillReceiveProps({ active }) {
@@ -63,10 +73,18 @@ export default class Dots extends Component {
 	}
 
 	dotStyle(isActive) {
-		const { activeDotWidth, passiveDotWidth, activeColor, passiveColor } = this.props;
+		const {
+			activeDotWidth,
+			passiveDotWidth,
+			activeColor,
+			passiveColor,
+			activeBorder,
+			activeBorderWidth,
+			activeBorderColor
+		} = this.props;
 		const width = isActive ? activeDotWidth : passiveDotWidth;
 
-		return {
+		let style = {
 			width,
 			height: width,
 			backgroundColor: isActive ? activeColor : passiveColor,
@@ -74,6 +92,14 @@ export default class Dots extends Component {
 			marginHorizontal: 2,
 			marginTop: isActive ? -width / 6 : 0
 		};
+
+		// active Border Styles.
+		if (activeBorder && isActive) {
+			style.borderWidth = activeBorderWidth;
+			style.borderColor = activeBorderColor;
+		}
+
+		return style;
 	}
 
 	render() {
