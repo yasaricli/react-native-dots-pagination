@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, ScrollView, Platform } from 'react-native';
+import PropTypes from 'prop-types';
 
 // Styles
 import Styles from './styles';
@@ -8,8 +9,24 @@ import Styles from './styles';
 const scalesPageToFit = Platform.OS === 'android';
 
 export default class Dots extends Component {
-	static defaultProps = {
+	static get propTypes() {
+		return {
+			length: PropTypes.number.isRequired,
+			active: PropTypes.number.isRequired,
 
+			width: PropTypes.number,
+			paddingVertical: PropTypes.number,
+			paddingHorizontal: PropTypes.number,
+
+			// Dots
+			passiveDotWidth: PropTypes.number,
+			activeDotWidth: PropTypes.number,
+			passiveColor: PropTypes.string,
+			activeColor: PropTypes.string
+		};
+	}
+
+	static defaultProps = {
 		// ScrollView
 		width: 300,
 		paddingVertical: 10,
