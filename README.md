@@ -38,4 +38,11 @@ class Example extends Component {
 |--|--|--|
 | length | 10 | Required. The amount of dots you want to use. |
 | active | 1 | Required. The index of the currently active dot. |
+| width | 300 | The overall width works like a center. |
+| paddingVertical | 10 | Average Vertical padding. |
+| paddingHorizontal | 10 | Average Horizontal padding. |
+| passiveDotWidth | 10 | (Width, Height) for passive dot. |
+| activeDotWidth | 15 | (Width, Height) for active dot. |
+| passiveColor | #CCCCCC | Colors for passive dots. |
+| activeColor | #016bd8 | Colors for active dots. |
 
