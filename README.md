@@ -12,9 +12,24 @@ Paging as dots for react-native.
 ## Using
 
 ```JS
+import React, { Component } from 'react';
 import Dots from 'react-native-dots-pagination';
 
-<Dots length={10} active={0} />
+
+class Example extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      active: 0
+    }
+  }
+  
+  render() {
+    return (
+      <Dots length={10} active={this.state.active} />
+    )
+  }
+}
 ```
 
 # Props
