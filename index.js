@@ -33,6 +33,8 @@ export default class Dots extends Component {
 
   static defaultProps = {
     width: 300,
+
+    marginHorizontal: 2,
     paddingVertical: 10,
     paddingHorizontal: 10,
 
@@ -77,16 +79,17 @@ export default class Dots extends Component {
       passiveColor,
       activeBorder,
       activeBorderWidth,
-      activeBorderColor
+      activeBorderColor,
+      marginHorizontal
     } = this.props;
     const width = isActive ? activeDotWidth : passiveDotWidth;
 
     let style = {
       width,
       height: width,
+      marginHorizontal,
       backgroundColor: isActive ? activeColor : passiveColor,
       borderRadius: width,
-      marginHorizontal: 2,
       marginTop: isActive ? -width / 6 : 0
     };
 
@@ -100,14 +103,22 @@ export default class Dots extends Component {
   }
 
   render() {
-    const { length, width, paddingVertical, paddingHorizontal } = this.props;
+    const {
+      length,
+      width,
+      paddingVertical,
+      paddingHorizontal,
+      passiveDotWidth,
+      marginHorizontal
+    } = this.props;
     const list = [...Array(length).keys()];
+    const scrollWidth = marginHorizontal * list.length * passiveDotWidth;
 
     return (
       <View style={Styles.container}>
         <ScrollView
           ref="_scrollView"
-          style={{ width }}
+          style={{ width: width < scrollWidth ? width : scrollWidth }}
           contentContainerStyle={{ paddingVertical, paddingHorizontal }}
           scalesPageToFit={scalesPageToFit}
           bounces={false}
