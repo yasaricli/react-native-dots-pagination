@@ -80,9 +80,11 @@ export default class Dots extends Component {
       activeBorder,
       activeBorderWidth,
       activeBorderColor,
-      marginHorizontal
+      marginHorizontal,
+      alignDotsOnXAxis
     } = this.props;
     const width = isActive ? activeDotWidth : passiveDotWidth;
+    const marginTop = alignDotsOnXAxis || !isActive ? 0 : -width / 6;
 
     let style = {
       width,
@@ -90,7 +92,7 @@ export default class Dots extends Component {
       marginHorizontal,
       backgroundColor: isActive ? activeColor : passiveColor,
       borderRadius: width,
-      marginTop: isActive ? -width / 6 : 0
+      marginTop,
     };
 
     // active Border Styles.
