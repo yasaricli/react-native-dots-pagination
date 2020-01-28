@@ -55,11 +55,10 @@ export default class Dots extends Component {
     activeBorderColor: "#FFF"
   };
 
-  componentWillReceiveProps({ active }) {
-    const oldActiveIndex = this.props.active;
-
-    if (oldActiveIndex !== active) {
-      this.scrollTo(active);
+  componentDidUpdate (prevProps, prevState, snapshot) {
+    const newActive = this.props.active
+    if (prevProps.active !== newActive) {
+      this.scrollTo(newActive);
     }
   }
 
