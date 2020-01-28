@@ -8,6 +8,9 @@ import Styles from "./styles";
 // set to fit
 const scalesPageToFit = Platform.OS === "android";
 
+const DEFAULT_PASSIVE_DOT_WIDTH = 10;
+const DEFAULT_ACTIVE_DOT_WIDTH = 15;
+
 export default class Dots extends Component {
   static get propTypes() {
     return {
@@ -21,6 +24,8 @@ export default class Dots extends Component {
       // Dots
       passiveDotWidth: PropTypes.number,
       activeDotWidth: PropTypes.number,
+      activeDotHeight: PropTypes.number,
+      passiveDotHeight: PropTypes.number,
       passiveColor: PropTypes.string,
       activeColor: PropTypes.string,
 
@@ -38,8 +43,10 @@ export default class Dots extends Component {
     paddingVertical: 10,
     paddingHorizontal: 10,
 
-    passiveDotWidth: 10,
-    activeDotWidth: 15,
+    passiveDotWidth: DEFAULT_PASSIVE_DOT_WIDTH,
+    activeDotWidth: DEFAULT_ACTIVE_DOT_WIDTH,
+    activeDotHeight: DEFAULT_ACTIVE_DOT_WIDTH,
+    passiveDotHeight: DEFAULT_PASSIVE_DOT_WIDTH,
     passiveColor: "#CCCCCC",
     activeColor: "#016bd8",
 
@@ -75,6 +82,8 @@ export default class Dots extends Component {
     const {
       activeDotWidth,
       passiveDotWidth,
+      activeDotHeight,
+      passiveDotHeight,
       activeColor,
       passiveColor,
       activeBorder,
@@ -86,9 +95,17 @@ export default class Dots extends Component {
     const width = isActive ? activeDotWidth : passiveDotWidth;
     const marginTop = alignDotsOnXAxis || !isActive ? 0 : -width / 6;
 
+    let height = width;
+
+    if (isActive && activeDotHeight != null) {
+      height = activeDotHeight;
+    } else if (!isActive && passiveDotHeight != null) {
+      height = passiveDotHeight;
+    }
+
     let style = {
       width,
-      height: width,
+      height,
       marginHorizontal,
       backgroundColor: isActive ? activeColor : passiveColor,
       borderRadius: width,

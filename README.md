@@ -43,6 +43,8 @@ class Example extends Component {
 | paddingHorizontal | 10 | Average Horizontal padding. |
 | passiveDotWidth | 10 | (Width, Height) for passive dot. |
 | activeDotWidth | 15 | (Width, Height) for active dot. |
+| passiveDotHeight | 10 | Height for passive dot. |
+| activeDotHeight | 15 | Height for active dot. |
 | passiveColor | #CCCCCC | Colors for passive dots. |
 | activeColor | #016bd8 | Colors for active dots. |
 
