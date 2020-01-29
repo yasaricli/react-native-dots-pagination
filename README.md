@@ -48,3 +48,7 @@ class Example extends Component {
 | passiveColor | #CCCCCC | Colors for passive dots. |
 | activeColor | #016bd8 | Colors for active dots. |
 
+## Issues
+
+[Github Issues](https://github.com/tsepeti/react-native-dots-pagination/issues) are used to track todos, bugs, feature requests, and more.
+
