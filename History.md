@@ -1,5 +1,7 @@
 # v.NEXT
 
+* Update to follow React-Native best practices (componentWillReceiveProps) #3
+
 ## 0.1.8
 * added Allow to set specific height for dots, Thanks @vdrorofeev
 
