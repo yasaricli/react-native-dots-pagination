@@ -55,7 +55,7 @@ export default class Dots extends Component {
     activeBorderColor: "#FFF"
   };
 
-  componentDidUpdate (prevProps, prevState, snapshot) {
+  componentDidUpdate (prevProps) {
     const newActive = this.props.active
     if (prevProps.active !== newActive) {
       this.scrollTo(newActive);
