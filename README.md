@@ -6,6 +6,18 @@ Paging as dots for react-native.
   <img src="https://raw.githubusercontent.com/tsepeti/react-native-dots-pagination/master/record.gif" width="50%" />
 </p>
 
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+  - [Quickstart](#quickstart)
+  - [Using](#using)
+- [Props](#props)
+  - [Issues](#issues)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Quickstart
     yarn add react-native-dots-pagination
     

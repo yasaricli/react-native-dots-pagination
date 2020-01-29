@@ -5,7 +5,8 @@
   "main": "index.js",
   "author": "Tatilsepeti <info@tatilsepeti.com>",
   "scripts": {
-    "lint": "eslint index.js"
+    "lint": "eslint index.js",
+    "update-readme-toc": "doctoc README.md"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
@@ -18,6 +19,7 @@
     }
   },
   "dependencies": {
+    "doctoc": "^1.4.0",
     "prop-types": "^15.7.2"
   },
   "keywords": [
