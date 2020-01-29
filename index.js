@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Platform } from "react-native";
-import PropTypes from "prop-types";
+import { View, ScrollView, Platform } from 'react-native';
+import PropTypes from 'prop-types';
 
 // Styles
-import Styles from "./styles";
+import Styles from './styles';
 
 // set to fit
-const scalesPageToFit = Platform.OS === "android";
+const scalesPageToFit = Platform.OS === 'android';
 
 const DEFAULT_PASSIVE_DOT_WIDTH = 10;
 const DEFAULT_ACTIVE_DOT_WIDTH = 15;
@@ -32,7 +32,7 @@ export default class Dots extends Component {
       // active Border
       activeBorder: PropTypes.bool,
       activeBorderColor: PropTypes.string,
-      activeBorderWidth: PropTypes.number
+      activeBorderWidth: PropTypes.number,
     };
   }
 
@@ -47,12 +47,12 @@ export default class Dots extends Component {
     activeDotWidth: DEFAULT_ACTIVE_DOT_WIDTH,
     activeDotHeight: DEFAULT_ACTIVE_DOT_WIDTH,
     passiveDotHeight: DEFAULT_PASSIVE_DOT_WIDTH,
-    passiveColor: "#CCCCCC",
-    activeColor: "#016bd8",
+    passiveColor: '#CCCCCC',
+    activeColor: '#016bd8',
 
     activeBorder: false,
     activeBorderWidth: 3,
-    activeBorderColor: "#FFF"
+    activeBorderColor: '#FFF',
   };
 
   componentWillReceiveProps({ active }) {
@@ -90,7 +90,7 @@ export default class Dots extends Component {
       activeBorderWidth,
       activeBorderColor,
       marginHorizontal,
-      alignDotsOnXAxis
+      alignDotsOnXAxis,
     } = this.props;
     const width = isActive ? activeDotWidth : passiveDotWidth;
     const marginTop = alignDotsOnXAxis || !isActive ? 0 : -width / 6;
@@ -128,7 +128,7 @@ export default class Dots extends Component {
       paddingVertical,
       paddingHorizontal,
       passiveDotWidth,
-      marginHorizontal
+      marginHorizontal,
     } = this.props;
     const list = [...Array(length).keys()];
     const scrollWidth = marginHorizontal * list.length * passiveDotWidth;
@@ -152,8 +152,8 @@ export default class Dots extends Component {
                 style={this.dotStyle(this.isActive(i))}
                 onLayout={({
                   nativeEvent: {
-                    layout: { x, y }
-                  }
+                    layout: { x, y },
+                  },
                 }) => {
                   this[`dots_${i}`] = { x, y };
                 }}
