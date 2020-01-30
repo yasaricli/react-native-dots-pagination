@@ -2,6 +2,7 @@
 
 ## 0.1.9
 * Update to follow React-Native best practices (componentWillReceiveProps) #3
+* Fixed ref attributes is deprecated (react/no-string-refs)
 
 ## 0.1.8
 * added Allow to set specific height for dots, Thanks @vdrorofeev
