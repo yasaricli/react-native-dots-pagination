@@ -56,7 +56,7 @@ export default class Dots extends Component {
   };
 
   componentDidUpdate (prevProps) {
-    const newActive = this.props.active
+    const newActive = this.props.active;
     if (prevProps.active !== newActive) {
       this.scrollTo(newActive);
     }
@@ -69,7 +69,7 @@ export default class Dots extends Component {
     if (get) {
       const x = get.x - (width / 2 - activeDotWidth);
 
-      return this.refs._scrollView.scrollTo({ x });
+      return this.scrollRef.scrollTo({ x });
     }
   }
 
@@ -135,7 +135,7 @@ export default class Dots extends Component {
     return (
       <View style={Styles.container}>
         <ScrollView
-          ref="_scrollView"
+          ref={(el) => { this.scrollRef = el; }}
           style={{ width: width < scrollWidth ? width : scrollWidth }}
           contentContainerStyle={{ paddingVertical, paddingHorizontal }}
           scalesPageToFit={scalesPageToFit}

@@ -1,5 +1,6 @@
 # v.NEXT
 
+## 0.1.9
 * Update to follow React-Native best practices (componentWillReceiveProps) #3
 
 ## 0.1.8
