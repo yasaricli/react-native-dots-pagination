@@ -1,6 +1,6 @@
 {
   "name": "react-native-dots-pagination",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Paging as dots for react-native.",
   "main": "index.js",
   "author": "Tatilsepeti <info@tatilsepeti.com>",
