@@ -126,18 +126,21 @@ export default class Dots extends Component {
       width,
       paddingVertical,
       paddingHorizontal,
+      activeDotWidth,
+      activeBorderWidth,
       passiveDotWidth,
       marginHorizontal,
     } = this.props;
     const list = [...Array(length).keys()];
-    const scrollWidth = marginHorizontal * list.length * passiveDotWidth;
+    const activeWidth = (activeBorderWidth * 4) + activeDotWidth + paddingHorizontal;
+    const scrollWidth = activeWidth + ((list.length - 1) * passiveDotWidth) + (marginHorizontal * (list.length * 2));
 
     return (
       <View style={Styles.container}>
         <ScrollView
           ref={(el) => { this.scrollRef = el; }}
           style={{ width: width < scrollWidth ? width : scrollWidth }}
-          contentContainerStyle={{ paddingVertical, paddingHorizontal }}
+          contentContainerStyle={{ alignItems: 'center', paddingVertical, paddingHorizontal }}
           scalesPageToFit={scalesPageToFit}
           bounces={false}
           horizontal={true}
