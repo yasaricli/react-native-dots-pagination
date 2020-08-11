@@ -1,14 +1,17 @@
 # v.NEXT
 
+## 0.1.10
+* Fixed full width center. Thanks [@mstrk](https://github.com/mstrk)
+
 ## 0.1.9
 * Update to follow React-Native best practices (componentWillReceiveProps) #3
 * Fixed ref attributes is deprecated (react/no-string-refs)
 
 ## 0.1.8
-* added Allow to set specific height for dots, Thanks @vdrorofeev
+* added Allow to set specific height for dots, Thanks [@vdrorofeev](https://github.com/vdrorofeev)
 
 ## 0.1.7
-* Align dots on x axis thanks @dbarner1
+* Align dots on x axis thanks [@dbarner1](https://github.com/dbarner1)
 
 ## 0.1.6
 * fixed dots width
