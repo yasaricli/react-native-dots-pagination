@@ -3,7 +3,7 @@ import { View, ScrollView, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 
 // Styles
-import Styles from './styles';
+import {Styles} from './styles';
 
 // set to fit
 const scalesPageToFit = Platform.OS === 'android';
