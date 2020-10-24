@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export default (Styles = StyleSheet.create({
+export const Styles = StyleSheet.create({
   container: {
     justifyContent: 'center', 
     alignItems: 'center'
@@ -8,4 +8,4 @@ export default (Styles = StyleSheet.create({
 
   passive: { },
   active: { }
-}));
+});
