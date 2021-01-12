@@ -9,7 +9,7 @@ import {Styles} from './styles';
 const scalesPageToFit = Platform.OS === 'android';
 
 const DEFAULT_PASSIVE_DOT_WIDTH = 10;
-const DEFAULT_ACTIVE_DOT_WIDTH = 15;
+const DEFAULT_ACTIVE_DOT_WIDTH = 10;
 
 export default class Dots extends Component {
   static get propTypes() {
