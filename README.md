@@ -59,6 +59,7 @@ class Example extends Component {
 | activeDotHeight | 15 | Height for active dot. |
 | passiveColor | #CCCCCC | Colors for passive dots. |
 | activeColor | #016bd8 | Colors for active dots. |
+| marginHorizontal | 2 | To adjust Margin Horizontal |
 
 # Issues
 
