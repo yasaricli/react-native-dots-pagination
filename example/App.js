@@ -20,10 +20,10 @@ class Example extends Component {
 
   changePress() {
     this.setState({
-      active0: _.random(0, 5),
-      active1: _.random(0, 10),
-      active2: _.random(0, 15),
-      active3: _.random(0, 20),
+      active0: _.random(0, 4),
+      active1: _.random(0, 9),
+      active2: _.random(0, 14),
+      active3: _.random(0, 39),
     });
   }
 
@@ -33,8 +33,14 @@ class Example extends Component {
           <Dots length={5} active={this.state.active0} />
           <Dots length={10} active={this.state.active1} />
           <Dots length={15} active={this.state.active2} />
-          <Dots length={20} active={this.state.active3} />
-
+          <Dots
+            ref="dots"
+            length={40}
+            active={this.state.active3}
+            onScrollTo={(index, key) => {
+              this.setState({ active3: index })
+            }}
+          />
         <View style={Styles.footer}>
           <TouchableOpacity
             style={Styles.button}

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { View, ScrollView, Platform } from 'react-native';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { View, ScrollView, Platform } from "react-native";
+import PropTypes from "prop-types";
 
 // Styles
-import {Styles} from './styles';
+import { Styles } from "./styles";
 
 // set to fit
-const scalesPageToFit = Platform.OS === 'android';
+const scalesPageToFit = Platform.OS === "android";
 
 const DEFAULT_PASSIVE_DOT_WIDTH = 10;
 const DEFAULT_ACTIVE_DOT_WIDTH = 10;
@@ -33,6 +33,9 @@ export default class Dots extends Component {
       activeBorder: PropTypes.bool,
       activeBorderColor: PropTypes.string,
       activeBorderWidth: PropTypes.number,
+
+      // events
+      onScrollTo: PropTypes.func,
     };
   }
 
@@ -47,29 +50,39 @@ export default class Dots extends Component {
     activeDotWidth: DEFAULT_ACTIVE_DOT_WIDTH,
     activeDotHeight: DEFAULT_ACTIVE_DOT_WIDTH,
     passiveDotHeight: DEFAULT_PASSIVE_DOT_WIDTH,
-    passiveColor: '#CCCCCC',
-    activeColor: '#016bd8',
+    passiveColor: "#CCCCCC",
+    activeColor: "#016bd8",
 
     activeBorder: false,
     activeBorderWidth: 3,
-    activeBorderColor: '#FFF',
+    activeBorderColor: "#FFF",
+
+    // events
+    onScrollTo() {
+      // this function on change index.
+    },
   };
 
-  componentDidUpdate (prevProps) {
+  componentDidUpdate(prevProps) {
     const newActive = this.props.active;
+
     if (prevProps.active !== newActive) {
       this.scrollTo(newActive);
     }
   }
 
   scrollTo(index) {
-    const { width, activeDotWidth } = this.props;
-    const get = this[`dots_${index}`];
+    const { width, activeDotWidth, onScrollTo } = this.props;
+    const key = `dots_${index}`;
+    const get = this[key];
 
     if (get) {
       const x = get.x - (width / 2 - activeDotWidth);
 
-      return this.scrollRef.scrollTo({ x });
+      this.scrollRef.scrollTo({ x });
+
+      // on change event
+      onScrollTo(index, key);
     }
   }
 
@@ -132,22 +145,32 @@ export default class Dots extends Component {
       marginHorizontal,
     } = this.props;
     const list = [...Array(length).keys()];
-    const activeWidth = (activeBorderWidth * 4) + activeDotWidth + paddingHorizontal;
-    const scrollWidth = activeWidth + ((list.length - 1) * passiveDotWidth) + (marginHorizontal * (list.length * 2));
+    const activeWidth =
+      activeBorderWidth * 4 + activeDotWidth + paddingHorizontal;
+    const scrollWidth =
+      activeWidth +
+      (list.length - 1) * passiveDotWidth +
+      marginHorizontal * (list.length * 2);
 
     return (
       <View style={Styles.container}>
         <ScrollView
-          ref={(el) => { this.scrollRef = el; }}
+          ref={(el) => {
+            this.scrollRef = el;
+          }}
           style={{ width: width < scrollWidth ? width : scrollWidth }}
-          contentContainerStyle={{ alignItems: 'center', paddingVertical, paddingHorizontal }}
+          contentContainerStyle={{
+            alignItems: "center",
+            paddingVertical,
+            paddingHorizontal,
+          }}
           scalesPageToFit={scalesPageToFit}
           bounces={false}
           horizontal={true}
           scrollEnabled={false}
           showsHorizontalScrollIndicator={false}
         >
-          {list.map(i => {
+          {list.map((i) => {
             return (
               <View
                 key={i}

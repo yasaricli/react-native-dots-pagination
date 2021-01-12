@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "description": "Paging as dots for react-native.",
   "main": "index.js",
-  "author": "Tatilsepeti <info@tatilsepeti.com>",
+  "author": "Yasar ICLI <yasaricli@gmail.com>",
   "scripts": {
     "lint": "eslint index.js",
     "update-readme-toc": "doctoc README.md"
