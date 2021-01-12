@@ -60,6 +60,7 @@ class Example extends Component {
 | passiveColor | #CCCCCC | Colors for passive dots. |
 | activeColor | #016bd8 | Colors for active dots. |
 | marginHorizontal | 2 | To adjust Margin Horizontal |
+| onScrollTo | function | Trigger when scrolls and index changes |
 
 # Issues
 
