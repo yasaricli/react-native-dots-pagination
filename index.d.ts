@@ -63,6 +63,10 @@ export interface DotsProperties {
    * Trigger when scrolls and index changes
    */
   onScrollTo?: (index: number) => void;
+  /**
+   * To adjust if the active dot should align with the x axis of the inactive dots
+   */
+  alignDotsOnXAxis?: boolean;
 }
 
 export default class Dots extends Component<DotsProperties> {}
