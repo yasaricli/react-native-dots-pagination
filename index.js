@@ -34,6 +34,11 @@ export default class Dots extends Component {
       activeBorderColor: PropTypes.string,
       activeBorderWidth: PropTypes.number,
 
+      // passive Border
+      activeBorder: PropTypes.bool,
+      activeBorderColor: PropTypes.string,
+      activeBorderWidth: PropTypes.number,
+
       // events
       onScrollTo: PropTypes.func,
     };
@@ -56,6 +61,10 @@ export default class Dots extends Component {
     activeBorder: false,
     activeBorderWidth: 3,
     activeBorderColor: "#FFF",
+
+    passiveBorder: false,
+    passiveBorderWidth: 3,
+    passiveBorderColor: "#FFF",
 
     // events
     onScrollTo() {
@@ -101,6 +110,9 @@ export default class Dots extends Component {
       activeBorder,
       activeBorderWidth,
       activeBorderColor,
+      passiveBorder,
+      passiveBorderWidth,
+      passiveBorderColor,
       marginHorizontal,
       alignDotsOnXAxis,
     } = this.props;
@@ -128,6 +140,12 @@ export default class Dots extends Component {
     if (activeBorder && isActive) {
       style.borderWidth = activeBorderWidth;
       style.borderColor = activeBorderColor;
+    }
+
+    // passive Border Styles.
+    if (passiveBorder && !isActive) {
+      style.borderWidth = passiveBorderWidth;
+      style.borderColor = passiveBorderColor;
     }
 
     return style;
