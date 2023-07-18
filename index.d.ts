@@ -67,6 +67,14 @@ export interface DotsProperties {
    * To adjust if the active dot should align with the x axis of the inactive dots
    */
   alignDotsOnXAxis?: boolean;
+  /**
+   * Set to true if you wish the dots to be reachable by screen reader. If true, you should supply an `acccessibilityLabel`. 
+   */
+  accessible?: boolean;
+  /**
+  * Label to be read by screen readers if the element is accessible. Should indicate to the user that there is swipeable content on the page, and which panel they are currently on.
+  */
+  accessibilityLabel?: string
 }
 
 export default class Dots extends Component<DotsProperties> {}
