@@ -36,6 +36,10 @@ export default class Dots extends Component {
 
       // events
       onScrollTo: PropTypes.func,
+
+      // accessibility
+      accessible: PropTypes.bool,
+      accessibilityLabel: PropTypes.string
     };
   }
 
@@ -61,6 +65,9 @@ export default class Dots extends Component {
     onScrollTo() {
       // this function on change index.
     },
+
+    accessible: false,
+    accessibilityLabel: ''
   };
 
   componentDidUpdate(prevProps) {
@@ -143,6 +150,8 @@ export default class Dots extends Component {
       activeBorderWidth,
       passiveDotWidth,
       marginHorizontal,
+      accessible,
+      accessibilityLabel
     } = this.props;
     const list = [...Array(length).keys()];
     const activeWidth =
@@ -153,7 +162,7 @@ export default class Dots extends Component {
       marginHorizontal * (list.length * 2);
 
     return (
-      <View style={Styles.container}>
+      <View style={Styles.container} accessible={accessible} accessibilityLabel={accessibilityLabel}>
         <ScrollView
           ref={(el) => {
             this.scrollRef = el;
