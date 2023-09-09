@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { View, ScrollView, Platform } from "react-native";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { View, ScrollView, Platform } from 'react-native';
+import PropTypes from 'prop-types';
 
 // Styles
-import { Styles } from "./styles";
+import { Styles } from './styles';
 
 // set to fit
-const scalesPageToFit = Platform.OS === "android";
+const scalesPageToFit = Platform.OS === 'android';
 
 const DEFAULT_PASSIVE_DOT_WIDTH = 10;
 const DEFAULT_ACTIVE_DOT_WIDTH = 10;
@@ -39,7 +39,7 @@ export default class Dots extends Component {
 
       // accessibility
       accessible: PropTypes.bool,
-      accessibilityLabel: PropTypes.string
+      accessibilityLabel: PropTypes.string,
     };
   }
 
@@ -54,12 +54,12 @@ export default class Dots extends Component {
     activeDotWidth: DEFAULT_ACTIVE_DOT_WIDTH,
     activeDotHeight: DEFAULT_ACTIVE_DOT_WIDTH,
     passiveDotHeight: DEFAULT_PASSIVE_DOT_WIDTH,
-    passiveColor: "#CCCCCC",
-    activeColor: "#016bd8",
+    passiveColor: '#CCCCCC',
+    activeColor: '#016bd8',
 
     activeBorder: false,
     activeBorderWidth: 3,
-    activeBorderColor: "#FFF",
+    activeBorderColor: '#FFF',
 
     // events
     onScrollTo() {
@@ -67,7 +67,7 @@ export default class Dots extends Component {
     },
 
     accessible: false,
-    accessibilityLabel: ''
+    accessibilityLabel: '',
   };
 
   componentDidUpdate(prevProps) {
@@ -151,7 +151,7 @@ export default class Dots extends Component {
       passiveDotWidth,
       marginHorizontal,
       accessible,
-      accessibilityLabel
+      accessibilityLabel,
     } = this.props;
     const list = [...Array(length).keys()];
     const activeWidth =
@@ -169,7 +169,7 @@ export default class Dots extends Component {
           }}
           style={{ width: width < scrollWidth ? width : scrollWidth }}
           contentContainerStyle={{
-            alignItems: "center",
+            alignItems: 'center',
             paddingVertical,
             paddingHorizontal,
           }}
